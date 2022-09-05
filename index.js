@@ -2,9 +2,8 @@ console.log("Chitter is running")
 
 const PeepsModel = require('./peepsModel');
 const PeepsView = require('./peepsView');
+const PeepsApi = require('./peepsApi')
 
+const api = new PeepsApi();
 const model = new PeepsModel();
-model.addPeep("Displaying peep with the displayPeeps method")
-
-const view = new PeepsView(model);
-view.displayPeeps();
+const view = new PeepsView(model, api);

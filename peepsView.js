@@ -1,7 +1,6 @@
-const PeepsModel = require("./peepsModel");
-
 class PeepsView {
-  constructor(model) {
+  constructor(model, api) {
+    this.api = api;
     this.model = model;
     this.mainContainerEl = document.querySelector("#main-container");
     this.buttonEl = document.querySelector("#peep-button");
@@ -9,6 +8,7 @@ class PeepsView {
 
     this.buttonEl.addEventListener("click", () => {
       this.addPeep();
+      this.peepInput.value = null;
     });
   }
   displayPeeps() {
