@@ -7,3 +7,8 @@ const PeepsApi = require('./peepsApi')
 const api = new PeepsApi();
 const model = new PeepsModel();
 const view = new PeepsView(model, api);
+
+model.addPeep("Hello");
+view.displayPeeps();
+
+view.displayApiPeeps();

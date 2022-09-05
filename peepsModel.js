@@ -14,6 +14,10 @@ class PeepsModel {
   reset() {
     this.peeps = [];
   }
+
+  setPeeps(peeps) {
+    this.peeps = peeps;
+  }
 }
 
 module.exports = PeepsModel;

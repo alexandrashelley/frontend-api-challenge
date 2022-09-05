@@ -29,6 +29,13 @@ class PeepsView {
     this.model.addPeep(this.peepInput.value);
     this.displayPeeps();
   }
+
+  displayApiPeeps() {
+    this.api.loadPeeps((data) => {
+      this.model.setPeeps(data);
+      this.displayPeeps();
+    });
+  }
 }
 
 module.exports = PeepsView;
